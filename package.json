@@ -1,7 +1,11 @@
 {
     "name": "@kesm24/loggy",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A simple, yet fancy logging utility",
+    "respository": {
+        "type": "git",
+        "url": "https://github.com/kesm24/loggy.git"
+    },
     "files": [
         "dist/**/*"
     ],
