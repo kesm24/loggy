@@ -1,0 +1,38 @@
+{
+    "name": "@kesm24/loggy",
+    "version": "1.0.0",
+    "description": "A simple, yet fancy logging utility",
+    "files": [
+        "dist/**/*"
+    ],
+    "main": "./dist/cjs/loggy.js",
+    "module": "./dist/esm/loggy.mjs",
+    "types": "./dist/types/loggy.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/esm/loggy.mjs",
+            "require": "./dist/cjs/loggy.js"
+        }
+    },
+    "scripts": {
+        "clean": "rm -rf ./dist",
+        "build": "npm run clean && npm run build-esm && npm run build-cjs",
+        "build-esm": "tsc && mv dist/esm/loggy.js dist/esm/loggy.mjs",
+        "build-cjs": "babel dist/esm --out-dir dist/cjs",
+        "prepack": "npm run build"
+    },
+    "author": "Kyle Silkworth Marion",
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "^4.1.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.19.1",
+        "@babel/cli": "^7.18.10",
+        "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+        "@types/chalk": "^2.2.0",
+        "@types/node": "^18.7.22",
+        "babel-plugin-add-module-exports": "^1.0.4",
+        "typescript": "^4.8.3"
+    }
+}
